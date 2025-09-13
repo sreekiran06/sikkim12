@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sikkim Tourism Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #bb3e03;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .header-left img, .header-right img {
+      height: 60px;
+    }
+    .header-center {
+      text-align: center;
+      flex: 1;
+    }
+    .header-center h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .header-center p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* STICKY NAVBAR */
+    nav {
+      background: #ee9b00;
+      display: flex;
+      justify-content: center;
+      position: sticky;   /* sticks after header */
+      top: 0;             /* attaches to top when scrolling */
+      z-index: 1000;
+    }
+   /* nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+    }
+    nav a:hover {
+      background: #E9D8A6;
+      border-radius: 5px;
+      
+    }*/
+    nav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background: #E9D8A6;
+  color: #000; /* optional: makes text darker for contrast */
+  border-radius: 10px; /* optional: smooth edges */
+}
+
+
+    /* HERO */
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e8/Taj_Mahal_in_India_-_Kristian_Bertel.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h3 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    /*slode show*/
+     .hero-slider {
+      position: relative;
+      overflow: hidden;
+      height: 85vh;
+      width: 100%;
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slide-text {
+      position: absolute;
+      bottom: 15%;
+      left: 5%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 20px;
+      max-width: 40%;
+      border-radius: 8px;
+    }
+    .slide-text h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+  
+
+    /* FOOTER */
+    footer {
+      background: #ee9b00;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Seal_of_Sikkim_greyscale.png" alt="Government Logo">
+    </div>
+    <div class="header-center">
+      <h1>Sikkim Monastery Tourism</h1>
+      <p>Explore Heritage, Culture & Nature</p>
+    </div>
+    <div class="header-right">
+      <img src="sikkimlogo.jpg" alt="Tourism Logo">
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION -->
+  <nav>
+    <a href="index.html" target="_parent">Home</a>
+    <a href="destinations.html" target="_self">Destinations</a>
+    <a href="updates.html" target="_self">Updates</a>
+    <a href="contact.html" target="_self">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <!--<section class="hero">
+    <h3>Step Inside Sikkim<br>(Explore,learn and experience Monasteries anywhere)</h3>
+   
+  </section> -->
+ <!-- Hero Slideshow -->
+  <div class="hero-slider" id="slider">
+    <div class="slides">
+      <!-- Slide 1: Video -->
+      <div class="slide">
+        <video autoplay muted loop>
+          <source src="Monastery1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="slide-text">
+          <h1>Introduction</h1>
+          <p>This project focuses on digitizing and showcasing monasteries of Sikkim for cultural preservation and tourism.</p>
+        </div>
+      </div>
+      <!-- Slide 2: Rumtek -->
+      <div class="slide" style="background-image: url('Rumtek7.jpg');">
+        <div class="slide-text">
+          <h1>Rumtek Monastery</h1>
+          <p>Seat of the Karmapa and Dharma Chakra Centre. Known for Kagyu tradition, relics, murals, and rituals.</p>
+        </div>
+      </div>
+       <!-- Slide 4: Video -->
+      <div class="slide">
+        <video autoplay muted loop>
+          <source src="Monastery2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="slide-text">
+          <h1>Introduction</h1>
+          <p>This project focuses on digitizing and showcasing monasteries of Sikkim for cultural preservation and tourism.</p>
+        </div>
+      </div>
+      <!-- Slide 5: Pemayangtse -->
+      <div class="slide" style="background-image: url('Phodong\ Monastery3.jpg');">
+        <div class="slide-text">
+          <h1>Pemayangtse Monastery</h1>
+          <p>One of the oldest (1705), belonging to the Nyingma order. Famous for its “Zangdok Palri” model.</p>
+        </div>
+      </div>
+         <!-- Slide 6: Video -->
+      <div class="slide">
+        <video autoplay muted loop>
+          <source src="Monastery3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="slide-text">
+          <h1>Introduction</h1>
+          <p>This project focuses on digitizing and showcasing monasteries of Sikkim for cultural preservation and tourism.</p>
+        </div>
+      </div>
+      <!-- Slide 7: Enchey -->
+      <div class="slide" style="background-image: url('monastery1.jpg');">
+        <div class="slide-text">
+          <h1>Enchey Monastery</h1>
+          <p>Near Gangtok, famous for murals, tantric traditions, and annual Cham dance festival.</p>
+        </div>
+      </div>
+         <!-- Slide 8: Video -->
+      <div class="slide">
+        <video autoplay muted loop>
+          <source src="Monastery4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="slide-text">
+          <h1>Introduction</h1>
+          <p>This project focuses on digitizing and showcasing monasteries of Sikkim for cultural preservation and tourism.</p>
+        </div>
+      </div>
+      <!-- Slide 9: Tashiding -->
+      <div class="slide" style="background-image: url('Rumtek6.jpg');">
+        <div class="slide-text">
+          <h1>Tashiding Monastery</h1>
+          <p>Founded in the 17th century, regarded as one of the holiest monasteries of Sikkim.</p>
+        </div>
+      </div>
+         <!-- Slide 10: Video -->
+      <div class="slide">
+        <video autoplay muted loop>
+          <source src="Monastery5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="slide-text">
+          <h1>Introduction</h1>
+          <p>This project focuses on digitizing and showcasing monasteries of Sikkim for cultural preservation and tourism.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Government of Sikkim Tourism Department | Contact: info@sikkimtourism.gov</p>
+  </footer>
+
+   <!-- Slideshow Script -->
+  <script>
+  const slides = document.querySelector('.slides');
+  if (slides) {
+    let currentIndex = 0;
+    const totalSlides = slides.children.length;
+
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    }
+
+    // auto advance every 4 seconds
+    setInterval(showNextSlide, 4000);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f9ff;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: #bb3e03;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .header-left img, .header-right img {
+      height: 60px;
+    }
+    .header-center {
+      text-align: center;
+      flex: 1;
+    }
+    .header-center h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .header-center p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #ee9b00;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      background: #E9D8A6;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    /* CONTACT CONTAINER */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h2, .contact-form h2 {
+      margin-bottom: 15px;
+      color: #ee9b00;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      resize: none;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      border: none;
+      background: #ee9b00;
+      color: white;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #bb3e03;
+    }
+
+    /* SOCIAL MEDIA SECTION */
+    .social-media {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+    .social-media h2 {
+      color: #ee9b00;
+      margin-bottom: 15px;
+    }
+    .social-media a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .social-media a:hover {
+      color: #bb3e03;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      background: #ee9b00;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+   <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Seal_of_Sikkim_greyscale.png" alt="Government Logo">
+    </div>
+    <div class="header-center">
+      <h1>Sikkim Monastery Tourism</h1>
+      <p>Explore Heritage, Culture & Nature</p>
+    </div>
+    <div class="header-right">
+      <img src="tourismlogo.jpeg" alt="Tourism Logo">
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" target="_parent">Home</a>
+    <a href="destinations.html" target="_self">Destinations</a>
+    <a href="updates.html" target="_self">Updates</a>
+    <a href="contact.html" target="_self">Contact</a>
+  </nav>
+
+  <div class="container" id="contact">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>📍 Address:</strong> Top Floor, Secretariat Annexe-I, Sonam Tshering Marg, Gangtok-73710</p>
+      <p><strong>📞 Phone:</strong> +91 9550365910</p>
+      <p><strong>✉️ Email:</strong> dit-sik@nic.in</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA LINKS -->
+  <div class="social-media">
+    <h2>Follow Us</h2>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/TourismSikkim?t=r2tBERJHJWM2hymRuFZI4w&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/indiatoday?igsh=amhwaXUxM2ViZnhl" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@flowershowsikkim?si=y9XHwRK8-i_Gf3iG" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <footer>
+    <p>© 2025 Your Company. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

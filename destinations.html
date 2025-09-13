@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #bb3e03;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .header-left img, .header-right img {
+      height: 60px;
+    }
+    .header-center {
+      text-align: center;
+      flex: 1;
+    }
+    .header-center h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .header-center p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* STICKY NAVBAR */
+    nav {
+      background: #ee9b00;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      background: #E9D8A6;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    /* SEARCH BAR */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+      padding: 15px;
+    }
+    .search-bar input[type="text"] {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px 0 0 20px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      border: none;
+      background: #bb3e03;
+      color: white;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .search-bar button:hover {
+      background: #9a2e02;
+    }
+
+    /* DESTINATIONS */
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: #f4f4f4;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px;
+    }
+    .card p {
+      margin: 10px;
+      font-size: 0.9rem;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Seal_of_Sikkim_greyscale.png" alt="Government Logo">
+    </div>
+    <div class="header-center">
+      <h1>Sikkim Tourism</h1>
+      <p>Explore Heritage, Culture & Nature</p>
+    </div>
+    <div class="header-right">
+      <img src="sikkimlogo.jpg" alt="Tourism Logo">
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION -->
+  <nav>
+    <a href="index.html" target="_parent">Home</a>
+    <a href="destinations.html" target="_self">Destinations</a>
+    <a href="updates.html" target="_self">Updates</a>
+    <a href="contact.html" target="_self">Contact</a>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search destinations...">
+    <button onclick="filterDestinations()">Search</button>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <section class="destinations" id="destinationList">
+    <div class="card">
+      <a href="rumtek.html" target="_self"><img src="Rumtek2.jpg" alt="Rumtek"></a>
+      <h3>Rumtek Monastery</h3>
+      <p>The most famous monastery in Sikkim, rich in history and culture.</p>
+    </div>
+    <div class="card">
+      <a href="Phodong.html" target="_self"><img src="Phodong Monastery1.jpg" alt="Phodong Monastery"></a>
+      <h3>Phodong Monastery</h3>
+      <p>Known for its ancient murals and Buddhist heritage.</p>
+    </div>
+    <div class="card">
+      <a href="Pemayangtse.html" target="_self"><img src="Pemayangtse Monastery1.jpg" alt="Pemayangtse Monastery"></a>
+      <h3>Pemayangtse Monastery</h3>
+      <p>One of the oldest monasteries in Sikkim with scenic surroundings.</p>
+    </div>
+  </section>
+
+  <script>
+    function filterDestinations() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const description = card.querySelector("p").textContent.toLowerCase();
+
+        if (title.includes(input) || description.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Live search (typing filters instantly)
+    document.getElementById("searchInput").addEventListener("keyup", filterDestinations);
+  </script>
+</body>
+</html>

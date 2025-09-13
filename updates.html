@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sikkim Tourism - Updates</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #bb3e03;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .header-left img, .header-right img {
+      height: 60px;
+    }
+    .header-center {
+      text-align: center;
+      flex: 1;
+    }
+    .header-center h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .header-center p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* STICKY NAVBAR */
+    nav {
+      background: #ee9b00;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      background: #E9D8A6;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    /* SEARCH BAR */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+      padding: 15px;
+    }
+    .search-bar input[type="text"] {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px 0 0 20px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      border: none;
+      background: #bb3e03;
+      color: white;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .search-bar button:hover {
+      background: #9a2e02;
+    }
+
+    /* UPDATES SECTION - IMAGE LEFT, TEXT RIGHT */
+    .updates {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 40px;
+    }
+    .update-card {
+      display: flex;
+      align-items: flex-start;
+      background: #f4f4f4;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+    .update-card img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .update-content {
+      flex: 1;
+    }
+    .update-card h3 {
+      margin-top: 0;
+      color: #bb3e03;
+    }
+    .update-card pre {
+      background: #fff8e6;
+      padding: 10px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+    .update-card:hover {
+      transform: scale(1.02);
+    }
+
+    /* NO RESULTS MESSAGE */
+    #noResults {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #bb3e03;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Seal_of_Sikkim_greyscale.png" alt="Government Logo">
+    </div>
+    <div class="header-center">
+      <h1>Sikkim Tourism</h1>
+      <p>Latest News, Updates & Festivals</p>
+    </div>
+    <div class="header-right">
+      <img src="sikkimlogo.jpg" alt="Tourism Logo">
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="updates.html">Updates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search updates, festivals, news...">
+    <button onclick="filterUpdates()">Search</button>
+  </div>
+
+  <!-- UPDATES SECTION -->
+  <section class="updates" id="updateList">
+    <div class="update-card">
+      <img src="losar.jpg" alt="Flower Festival">
+      <div class="update-content">
+        <h3> Losar (Tibetan New Year) 🏮✨</h3>
+        <pre>
+When: February or March (based on the lunar calendar).
+
+Where: Celebrated in all major monasteries of Sikkim.
+
+Highlights:
+- Marks the beginning of the Tibetan New Year.
+- Monks perform special pujas for peace and prosperity.
+- Butter lamps are lit, homes and monasteries are cleaned and decorated.
+- Families wear new clothes, prepare traditional food like guthuk (noodle soup).
+        </pre>
+      </div>
+    </div>
+
+    <div class="update-card">
+      <img src="pang.jpg" alt="Losar Festival">
+      <div class="update-content">
+        <h3> Pang Lhabsol 🐉⛰</h3>
+        <pre>
+When: August/September.
+
+Where: Mainly at Rabong Monastery, but also in Pemayangtse and other monasteries.
+
+Highlights:
+- Unique to Sikkim, venerates Mount Kanchenjunga as the guardian deity.
+- Colorful Cham dances (masked dances) performed by monks.
+- Prayers for unity and protection of the land.
+- Giant masks of guardian deities and warriors are showcased.
+        </pre>
+      </div>
+    </div>
+
+    <div class="update-card">
+      <img src="saga.jpg" alt="Kanchenjunga Festival">
+      <div class="update-content">
+        <h3>Saga Dawa 🪔</h3>
+        <pre>
+When: May/June (full moon of the 4th Tibetan month).
+
+Where: All monasteries, especially Rumtek Monastery.
+
+Highlights:
+- Marks Buddha’s Birth, Enlightenment, and Parinirvana.
+- Chanting of Buddhist scriptures and mantras.
+- Devotees light butter lamps, hoist prayer flags, and offer alms.
+- Pilgrims circumambulate monasteries and stupas.
+        </pre>
+      </div>
+    </div>
+
+    <div class="update-card">
+      <img src="lhabab.jpeg" alt="Road Update">
+      <div class="update-content">
+        <h3>Lhabab Düchen 🌄🙏</h3>
+        <pre>
+When: October/November.
+
+Where: Prominently at Tashiding and Enchey monasteries.
+
+Highlights:
+- Celebrates the day Buddha descended from heaven after teaching his mother.
+- Special pujas for world peace and compassion.
+- Devotees circumambulate monasteries while chanting mantras.
+- Butter lamp offerings and colorful rituals take place.
+        </pre>
+      </div>
+    </div>
+
+    <div class="update-card">
+      <img src="Drupka.jpeg" alt="COVID Travel Advisory">
+      <div class="update-content">
+        <h3>Drupka Teshi 📜</h3>
+        <pre>
+When: July/August (4th day of 6th Tibetan month).
+
+Where: Celebrated at monasteries across Sikkim.
+
+Highlights:
+- Commemorates Buddha’s first sermon at Sarnath (Wheel of Dharma teaching).
+- Monks recite Dharma teachings.
+- People engage in good deeds like feeding the poor, freeing captive animals, and lighting lamps.
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <p id="noResults">No results found. Try another search.</p>
+
+  <script>
+    function filterUpdates() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".update-card");
+      let matchFound = false;
+
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const description = card.querySelector(".update-content").textContent.toLowerCase(); // ✅ includes <pre>
+
+        if (title.includes(input) || description.includes(input)) {
+          card.style.display = "flex";
+          matchFound = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      document.getElementById("noResults").style.display = matchFound ? "none" : "block";
+    }
+
+    // Live search
+    document.getElementById("searchInput").addEventListener("keyup", filterUpdates);
+  </script>
+</body>
+</html>
